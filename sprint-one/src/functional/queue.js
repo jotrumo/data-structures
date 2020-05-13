@@ -19,15 +19,19 @@ var Queue = function() {
   // Implement the methods below
 
   someInstance.enqueue = function(value) {
-    storage[enqueueNumKey++] = value;
+    storage[enqueueNumKey] = value;
+    enqueueNumKey++;
     size++;
     console.log(storage);
   };
 
   someInstance.dequeue = function() {
-    var result = storage[dequeueNumKey];
-    delete storage[dequeueNumKey++];
-    size--;
+    if (size > 0) {
+      var result = storage[dequeueNumKey];
+      delete storage[dequeueNumKey];
+      dequeueNumKey++;
+      size--;
+    }
     return result;
   };
 
