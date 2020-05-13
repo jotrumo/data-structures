@@ -12,26 +12,22 @@ var Queue = function() {
 
   // Use an object with numeric keys to store values
   var storage = {};
-  var num = 0;
+  var enqueueNumKey = 0;
+  var dequeueNumKey = 0;
   var size = 0;
 
   // Implement the methods below
 
   someInstance.enqueue = function(value) {
-    storage[num] = value;
-    num = num + 1;
-    size = size + 1;
+    storage[enqueueNumKey++] = value;
+    size++;
     console.log(storage);
   };
 
   someInstance.dequeue = function() {
-    var result = storage['0'];
-    delete storage['0'];
-    for (var key in storage) {
-      console.log(key);
-
-    }
-
+    var result = storage[dequeueNumKey];
+    delete storage[dequeueNumKey++];
+    size--;
     return result;
   };
 
@@ -39,14 +35,12 @@ var Queue = function() {
     return size;
   };
 
-
   return someInstance;
 };
-
 
 var queue = new Queue();
 
 queue.enqueue('a');
 queue.enqueue('b');
 queue.enqueue('c');
-queue.dequeue();
+
