@@ -7,7 +7,6 @@ class Stack {
     this.sizeObj = 0;
   }
 
-
   push(value) {
       this.storage[this.keyNum] = value;
       this.keyNum++;
