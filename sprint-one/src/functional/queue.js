@@ -42,9 +42,3 @@ var Queue = function() {
   return someInstance;
 };
 
-var queue = new Queue();
-
-queue.enqueue('a');
-queue.enqueue('b');
-queue.enqueue('c');
-
