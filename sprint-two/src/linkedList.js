@@ -14,12 +14,12 @@ var LinkedList = function() {
       list.head = nodeObj;
       list.tail = nodeObj;
       previousNode = nodeObj;
-      console.log("PreviousNode :", previousNode);
+      // console.log("PreviousNode :", previousNode);
 
     } else if (list.head) {
 
       previousNode.next = nodeObj;
-      console.log('SecondNode: ', previousNode);
+      // console.log('SecondNode: ', previousNode);
       previousNode = nodeObj
       list.tail = nodeObj;
     }
@@ -36,9 +36,25 @@ var LinkedList = function() {
   };
 
   list.contains = function(target) {
+    var result;
 
+    var checkNext = function(obj) {
+      if (obj.value === target) {
+        result = true;
 
+      } else if (obj.next !== null) {
+        checkNext(obj.next);
+
+      } else {
+        result = false;
+      }
+    };
+
+    checkNext(list.head);
+
+    return result;
   }
+
   return list;
 };
 
@@ -51,11 +67,12 @@ var Node = function(value) {
   return node;
 };
 
-var test = LinkedList();
+// var test = LinkedList();
 
-test.addToTail(5);
-test.addToTail(6);
-console.log(test);
+// test.addToTail(5);
+// test.addToTail(6);
+// test.contains(6);
+// console.log(test);
 
 /*
  * Complexity: What is the time complexity of the above functions?
