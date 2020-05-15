@@ -2,7 +2,6 @@ var LinkedList = function() {
   var list = {};
   list.head = null;
   list.tail = null;
-
   var previousNode = null;
 
   list.addToTail = function(value) {
@@ -66,13 +65,6 @@ var Node = function(value) {
 
   return node;
 };
-
-// var test = LinkedList();
-
-// test.addToTail(5);
-// test.addToTail(6);
-// test.contains(6);
-// console.log(test);
 
 /*
  * Complexity: What is the time complexity of the above functions?
