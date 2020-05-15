@@ -68,4 +68,5 @@ var Node = function(value) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ O(n) is the worse case time complexity since we have to recursively iterate through each linked object in order to find the target value.
  */

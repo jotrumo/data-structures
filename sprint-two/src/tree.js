@@ -1,19 +1,15 @@
 var Tree = function(value) {
   var newTree = Object.create(treeMethods);
   newTree.value = value;
-  // your code here
-
-  // newTree.children = {};  // fixed null value by adding empty object
-  newTree.children = []; // What if we make this into an array instead?
+  newTree.children = [];
   return newTree;
 };
 
 var treeMethods = {};
 
 treeMethods.addChild = function(value) {
-//takes any value, sets that as the target of a node and adds that node as a child of the tree
   var newChild = Tree(value);
-  this.children.push(newChild); // Push into the array instead of adding to an object?
+  this.children.push(newChild);
 };
 
 treeMethods.contains = function(target) {
@@ -32,21 +28,10 @@ treeMethods.contains = function(target) {
   childLookup(this.children);
   return result;
 };
-// method, takes any input and returns a boolean reflecting whether it can be found as the value of the target node or any descendant node
-
-
-
-var test = Tree(5);
-console.log(test);
-test.addChild(6);
-test.addChild(6);
-test.addChild(6);
-console.log("children :", test.children);
-
-
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ * Answer: O(n) is the worst case complexity since iteration is required in the contains method.
  */
 
 
