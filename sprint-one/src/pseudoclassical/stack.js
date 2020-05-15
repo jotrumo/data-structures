@@ -12,7 +12,6 @@ Stack.prototype.push = function(value) {
     this.keyNum++;
     this.sizeObj++;
 };
-
 Stack.prototype.pop = function() {
     if (this.sizeObj > 0) {
       this.keyNum--;
