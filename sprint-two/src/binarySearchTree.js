@@ -4,7 +4,6 @@ var BinarySearchTree = function(value) {
   tree.left = null;
   tree.right = null;
 
-
   tree.insert = function(value) {
 
     if (this.value > value) {
@@ -41,10 +40,9 @@ var BinarySearchTree = function(value) {
       this.right.depthFirstLog(cb);
     }
   };
+
   return tree;
 };
-
-
 
 /*
  * Complexity: What is the time complexity of the above functions
